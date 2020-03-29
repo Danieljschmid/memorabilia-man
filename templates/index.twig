@@ -1,0 +1,16 @@
+{% extends "_layouts/main" %}
+
+{% block main %}
+  <div class="jumbotron jumbotron-fluid" style="background-image: url({{  entry.bannerImage.one().url() }});">
+  <div class="container text-center">
+    <h1 class="display-4">{{ entry.bannerHeading }}</h1>
+    <p class="lead">{{ entry.bannerSubheading }}</p>
+  </div>
+</div>
+
+<div class="container embed-responsive embed-responsive-16by9">
+  <video class="embed-responsive-item" autoplay controls>
+    <source src="https://mdbootstrap.com/img/video/Lines.mp4" type="video/mp4"/>
+  </video>
+</div>
+{% endblock %}
