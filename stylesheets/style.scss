@@ -6,10 +6,18 @@
 @import '2-tools/bootstrap.min';
 
 // 3 - BASICS
+@import '3-basics/typography';
+@import '3-basics/buttons';
 
 // 4 - LAYOUT
+@import '4-layout/main-layout';
 
 // 5 - COMPONENTS
 @import '5-components/banner';
+@import '5-components/video';
+@import '5-components/navbar';
+@import '5-components/footer';
+@import '5-components/card';
 
 // 6 - PAGES
+@import '6-pages/home';

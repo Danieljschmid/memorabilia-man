@@ -4,19 +4,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Quicksand&display=swap" rel="stylesheet">
   </head>
 
   <body>
   {# Navbar #}
-<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex sticky-top fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex">
   {# Brand Logo #}
   <div>
-  <a class="navbar-brand" href="/">Memorabilia Man</a>
+  <a class="navbar-brand" href="/"><img src="images/uploads/logo/Memorabilia-Man.png"></a>
   </div>
 
   {# Burger Menu Button#}
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="icon-bar top-bar"></span>
+	  <span class="icon-bar middle-bar"></span>
+	  <span class="icon-bar bottom-bar"></span>	
   </button>
 
   {# Navbar Items #}
@@ -31,13 +34,57 @@
 </nav>
 {# End Navbar #}
 
+<div class="page-content">
 {% block main %}
-
-
-
 {% endblock %}
+</div>
 
+{# Footer #}
+<footer class="footer">
+<div class="d-flex justify-content-around bg-light flex-column flex-sm-row ">
 
+    {# Footer Column One #}
+    {% if craft.navigation.nodes('footerOne').count() > 0 %}
+      <div class="container text-center flex-column">
+          {{ craft.navigation.render('footerOne', {
+          ulClass: 'navbar-nav',
+          liClass: 'nav-item',
+          aClass: 'nav-link text-center',
+          activeClass: 'active',
+      }) }}
+      </div>
+    {% endif %}
+
+    {# Footer Column Two #}
+    {% if craft.navigation.nodes('footerTwo').count() > 0 %}
+      <div class="container text-center flex-column">
+          {{ craft.navigation.render('footerTwo', {
+          ulClass: 'navbar-nav',
+          liClass: 'nav-item',
+          aClass: 'nav-link text-center',
+          activeClass: 'active',
+      }) }}
+      </div>
+    {% endif %}
+
+    {# Footer Column Three #}
+    {% if craft.navigation.nodes('footerThree').count() > 0 %}
+      <div class="container text-center flex-column">
+          {{ craft.navigation.render('footerthree', {
+          ulClass: 'navbar-nav',
+          liClass: 'nav-item',
+          aClass: 'nav-link text-center',
+          activeClass: 'active',
+      }) }}
+      </div>
+    {% endif %}
+  </div>
+  
+  <div class="copyright text-center">
+    © Memorabilia Man 2020 | Site By Nacho Web Design
+  </div>
+</footer>
+{# End Footer #}
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

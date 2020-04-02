@@ -1,0 +1,47 @@
+// Nav Items
+.nav-item {
+    a {
+        font-family: $fontSerif;
+        font-size: 1.5em;
+        color: $colorPrimary !important;
+    }
+    a:hover {
+        color: $colorSecondary !important;
+    }
+}
+
+// Homepage Banner
+.display-4 {
+    color: $colorPrimary !important;
+    font-family: $fontSerif;
+}
+
+// Footer
+footer {
+    .copyright {
+        font-family: $fontSerif !important;
+        font-size: 1.2em;
+        color: $colorPrimary;
+    }
+}
+
+// Cards
+
+.card-body {
+    h5 {
+        font-family: $fontSerif;
+        font-size: 1.5em;
+        color: $colorPrimary;
+    }
+    p {
+        font-family: $fontSansSerif;
+        color: $charcoal;
+    }
+    a {
+        font-family: $fontSansSerif;
+        color: $charcoal;
+    }
+    a:hover {
+        color: $colorPrimary;
+    }
+}

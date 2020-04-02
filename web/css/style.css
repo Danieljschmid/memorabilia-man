@@ -10633,11 +10633,139 @@ a.text-dark:focus, a.text-dark:hover {
   }
 }
 /*# sourceMappingURL=bootstrap.min.css.map */
+.nav-item a {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5em;
+  color: #C0B283 !important;
+}
+.nav-item a:hover {
+  color: #DCD0C0 !important;
+}
+
+.display-4 {
+  color: #C0B283 !important;
+  font-family: "Cormorant Garamond", serif;
+}
+
+footer .copyright {
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 1.2em;
+  color: #C0B283;
+}
+
+.card-body h5 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5em;
+  color: #C0B283;
+}
+.card-body p {
+  font-family: "Quicksand", sans-serif;
+  color: #373737;
+}
+.card-body a {
+  font-family: "Quicksand", sans-serif;
+  color: #373737;
+}
+.card-body a:hover {
+  color: #C0B283;
+}
+
+.btn-outline-dark {
+  border-color: #373737 !important;
+}
+
+.btn-outline-dark:hover {
+  background-color: #F4F4F4;
+  border-color: #F4F4F4 !important;
+}
+
+.page-content {
+  position: relative;
+  min-height: 100vh;
+}
+
 .jumbotron {
   background-size: 100%;
   height: 50vh;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.vimeo-video {
+  max-height: 300px;
+}
+
+.navbar {
+  background: none !important;
+}
+
+.navbar-brand img {
+  height: 125px;
+}
+
+nav button:focus {
+  outline: none !important;
+}
+
+.icon-bar {
+  width: 22px;
+  height: 2px;
+  background-color: #C0B283;
+  display: block;
+  transition: all 0.2s;
+  margin-top: 4px;
+}
+
+.navbar-toggler {
+  border: none;
+  background: transparent !important;
+}
+
+.navbar-toggler .top-bar {
+  transform: rotate(45deg);
+  transform-origin: 10% 10%;
+}
+
+.navbar-toggler .middle-bar {
+  opacity: 0;
+}
+
+.navbar-toggler .bottom-bar {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%;
+}
+
+.navbar-toggler.collapsed .top-bar {
+  transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+  opacity: 1;
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+  transform: rotate(0);
+}
+
+footer {
+  padding: 25px 0;
+  background-color: #373737;
+}
+
+.cards-container {
+  padding: 25px 0;
+}
+
+.card {
+  border: none;
+  border-radius: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 100%;
+}
+
+.blog-feed {
+  background-color: #F4F4F4;
 }
 
 /*# sourceMappingURL=style.css.map */

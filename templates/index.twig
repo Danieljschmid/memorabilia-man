@@ -1,16 +1,35 @@
 {% extends "_layouts/main" %}
 
 {% block main %}
-  <div class="jumbotron jumbotron-fluid" style="background-image: url({{  entry.bannerImage.one().url() }});">
+  <div class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url({{  entry.bannerImage.one().url() }});">
   <div class="container text-center">
     <h1 class="display-4">{{ entry.bannerHeading }}</h1>
     <p class="lead">{{ entry.bannerSubheading }}</p>
   </div>
 </div>
 
-<div class="container embed-responsive embed-responsive-16by9">
-  <video class="embed-responsive-item" autoplay controls>
-    <source src="https://mdbootstrap.com/img/video/Lines.mp4" type="video/mp4"/>
-  </video>
+{# Video #}
+<div class="vimeo-video container embed-responsive embed-responsive-16by9">
+  <div class="embed-responsive-item">
+    <iframe src="https://player.vimeo.com/video/394239164" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  </div>
 </div>
+
+{# Blog Feed #}
+<div class="blog-feed">
+  <div class="cards-container container d-flex flex-column flex-md-row justify-content-around">
+  {% for entry in craft.entries.section('memorabilia').limit(3).all() %}
+    <div class="col-md-4">
+      {{craft.molecule.get("card", {
+        img: entry.featuredImage.one().url(),
+        title: entry.title,
+        excerpt: entry.excerpt,
+        URL: entry.url()
+        })
+      }}
+    </div>
+  {% endfor %}
+  </div>
+</div>
+
 {% endblock %}
