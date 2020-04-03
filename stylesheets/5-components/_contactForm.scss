@@ -1,0 +1,26 @@
+// Honeypot(anti-spam) Hide Input Style
+input#honeypotInput {
+    display: none;
+}
+
+form {
+    margin-top: 30px;
+    margin-bottom: 25px;
+
+    .form-control {
+        border: none;
+        border-bottom: 1px solid $charcoal;
+        border-radius: 0;
+    }
+    .form-control:focus {
+        border: none;
+        border-bottom: 1px solid $colorPrimary;
+        box-shadow: none;
+    }
+    .form-control:focus::placeholder {
+        color: white;
+    }
+    .form-group {
+        margin-bottom: 30px;
+    }
+}

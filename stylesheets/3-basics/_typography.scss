@@ -33,10 +33,6 @@ footer {
         font-size: 1.5em;
         color: $colorPrimary;
     }
-    p {
-        font-family: $fontSansSerif;
-        color: $charcoal;
-    }
     a {
         font-family: $fontSansSerif;
         color: $charcoal;
@@ -44,4 +40,45 @@ footer {
     a:hover {
         color: $colorPrimary;
     }
+}
+
+h3, h2 {
+    font-family: $fontSerif;
+    color: $colorPrimary;
+    font-size: 3em;
+    margin: 0 auto;
+    padding-top: 25px;
+}
+
+p {
+    font-family: $fontSansSerif;
+    color: $charcoal;
+}
+
+// Contact Form
+
+form {
+    .form-control {
+        font-family: $fontSansSerif;
+        color: $charcoal;
+        letter-spacing: 2px;
+    }
+    .form-control::placeholder {
+        color: $colorSecondary;
+    }
+    .alert-danger {
+        font-family: $fontSansSerif;
+        letter-spacing: 2px;
+        color: orangered;
+        border: none;
+        background: none;
+    }
+}
+
+.btn-outline-dark {
+    font-family: $fontSansSerif;
+}
+
+.btn-outline-dark:hover {
+    color: $colorPrimary;
 }

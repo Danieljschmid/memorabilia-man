@@ -1,22 +1,44 @@
 {% extends "_layouts/main" %}
 
 {% block main %}
-  <div class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url({{  entry.bannerImage.one().url() }});">
+<div class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url({{  entry.bannerImage.one().url() }});">
   <div class="container text-center">
     <h1 class="display-4">{{ entry.bannerHeading }}</h1>
     <p class="lead">{{ entry.bannerSubheading }}</p>
   </div>
 </div>
 
-{# Video #}
-<div class="vimeo-video container embed-responsive embed-responsive-16by9">
-  <div class="embed-responsive-item">
-    <iframe src="https://player.vimeo.com/video/394239164" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-  </div>
+<div class="container">
+<h2 class="text-center">Russel Martin: Memorabilia Man</h2>
+{% for block in entry.contentBlock %}
+  {% switch block.type %}
+  
+    {% case "text" %}
+    <p>{{block.bodyText}}</p>
+  
+    {% case "image" %}
+    {% set image = block.addImage.one() %}
+    <img src="{{ image.url() }}" class="img-fluid" alt="...">
+
+    {% case "video" %}
+    {# Video #}
+    <div class="vimeo-video container embed-responsive embed-responsive-16by9">
+      <div class="embed-responsive-item">
+        <iframe src="{{ block.video }}" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
+    </div>
+  
+  {% endswitch %}
+  
+{% endfor %}
+
+
 </div>
 
 {# Blog Feed #}
-<div class="blog-feed">
+<div class="blog-feed d-flex flex-column">
+  <h3 class="text-center">Memorabilia Stories</h3>
+  <p class="text-center">The collection is made up from over 1400 pieces of memorabilia, each with it's its own story.</p>
   <div class="cards-container container d-flex flex-column flex-md-row justify-content-around">
   {% for entry in craft.entries.section('memorabilia').limit(3).all() %}
     <div class="col-md-4">
@@ -31,5 +53,7 @@
   {% endfor %}
   </div>
 </div>
+
+{{ craft.molecule.get('cta') }}
 
 {% endblock %}

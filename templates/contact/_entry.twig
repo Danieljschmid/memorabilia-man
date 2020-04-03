@@ -2,6 +2,16 @@
 
 {% block main %}
 
+<div class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url({{  entry.bannerImage.one().url() }});">
+  <div class="container text-center">
+    <h1 class="display-4">{{ entry.bannerHeading }}</h1>
+    <p class="lead">{{ entry.bannerSubheading }}</p>
+  </div>
+</div>
+
+<h2 class="text-center">Contact us to find out more</h2>
+<p class="text-center">Want to know more about this one of a kind collection? Send us a message to enquire.</p>
+
 {# Contact Form #}
     {# Error Message Macro #}
     {% macro errorList(errors) %}
@@ -14,14 +24,6 @@
         {% endif %}
     {% endmacro %}
     {% from _self import errorList %}
- 
-
-    {# Honeypot(anti-spam) Hide Input Style #}
-    <style>
-        input#honeypotInput {
-            display: none;
-        }
-    </style>
   
 
     <div class="container col-12 col-sm-8 col-md-6">
@@ -33,27 +35,24 @@
 
             {# Name Input #}
             <div class="form-group">
-                <label for="from-name">Your Name</label>
-                <input id="from-name" class="form-control" type="text" name="fromName" value="{{ message.fromName ?? '' }}">
+                <input id="from-name" class="form-control" type="text" placeholder="NAME" name="fromName" value="{{ message.fromName ?? '' }}">
                 {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
             </div>
 
             {# Email Input #}
             <div class="form-group">
-                <label for="from-email">Your Email</label>
-                <input id="from-email" class="form-control" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}">
+                <input id="from-email" class="form-control" type="email" placeholder="EMAIL" name="fromEmail" value="{{ message.fromEmail ?? '' }}">
                 {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
             </div>
             
             {# Message Input #}
             <div class="form-group">
-                <label for="message">Message</label>
-                <textarea rows="3" id="message" class="form-control" name="message">{{ message.message ?? '' }}</textarea>
+                <textarea rows="2" id="message" class="form-control" placeholder="MESSAGE" name="message">{{ message.message ?? '' }}</textarea>
                 {{ message is defined and message ? errorList(message.getErrors('message')) }}
             </div>
 
             {# Submit Button #}
-            <input class="btn btn-outline-dark" type="submit" value="Send">
+            <input class="btn btn-outline-dark" type="submit" value="Send Message">
 
             {# Hidden Honeypot(anti-spam) Input #}
             <input id="honeypotInput" name="honeypotInput" type="text">

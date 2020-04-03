@@ -10658,15 +10658,48 @@ footer .copyright {
   font-size: 1.5em;
   color: #C0B283;
 }
-.card-body p {
-  font-family: "Quicksand", sans-serif;
-  color: #373737;
-}
 .card-body a {
   font-family: "Quicksand", sans-serif;
   color: #373737;
 }
 .card-body a:hover {
+  color: #C0B283;
+}
+
+h3, h2 {
+  font-family: "Cormorant Garamond", serif;
+  color: #C0B283;
+  font-size: 3em;
+  margin: 0 auto;
+  padding-top: 25px;
+}
+
+p {
+  font-family: "Quicksand", sans-serif;
+  color: #373737;
+}
+
+form .form-control {
+  font-family: "Quicksand", sans-serif;
+  color: #373737;
+  letter-spacing: 2px;
+}
+form .form-control::placeholder {
+  color: #DCD0C0;
+}
+form .alert-danger {
+  font-family: "Quicksand", sans-serif;
+  letter-spacing: 2px;
+  color: orangered;
+  border: none;
+  background: none;
+}
+
+.btn-outline-dark {
+  font-family: "Quicksand", sans-serif;
+}
+
+.btn-outline-dark:hover {
   color: #C0B283;
 }
 
@@ -10689,10 +10722,12 @@ footer .copyright {
   height: 50vh;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-bottom: 25px;
+  background-position: center;
 }
 
 .vimeo-video {
-  max-height: 300px;
+  max-height: 400px;
 }
 
 .navbar {
@@ -10753,7 +10788,7 @@ footer {
 }
 
 .cards-container {
-  padding: 25px 0;
+  padding-bottom: 35px;
 }
 
 .card {
@@ -10764,8 +10799,34 @@ footer {
   height: 100%;
 }
 
+input#honeypotInput {
+  display: none;
+}
+
+form {
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+form .form-control {
+  border: none;
+  border-bottom: 1px solid #373737;
+  border-radius: 0;
+}
+form .form-control:focus {
+  border: none;
+  border-bottom: 1px solid #C0B283;
+  box-shadow: none;
+}
+form .form-control:focus::placeholder {
+  color: white;
+}
+form .form-group {
+  margin-bottom: 30px;
+}
+
 .blog-feed {
   background-color: #F4F4F4;
+  margin-top: 25px;
 }
 
 /*# sourceMappingURL=style.css.map */
