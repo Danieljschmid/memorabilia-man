@@ -10647,6 +10647,10 @@ a.text-dark:focus, a.text-dark:hover {
   font-family: "Cormorant Garamond", serif;
 }
 
+.lead {
+  color: #C0B283;
+}
+
 footer .copyright {
   font-family: "Cormorant Garamond", serif !important;
   font-size: 1.2em;
@@ -10786,6 +10790,27 @@ footer {
   padding: 25px 0;
   background-color: #373737;
 }
+footer .d-flex {
+  background: #373737 !important;
+  color: #C0B283;
+}
+footer .d-flex p {
+  color: #C0B283;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5em;
+  margin-bottom: 0rem;
+}
+footer .d-flex a {
+  color: #C0B283;
+}
+footer .d-flex a:hover {
+  color: #DCD0C0 !important;
+}
+footer .d-flex i {
+  padding: 0 5px;
+  font-size: 1.25em;
+  line-height: 1.5em;
+}
 
 .cards-container {
   padding-bottom: 35px;
@@ -10796,7 +10821,10 @@ footer {
   border-radius: 0;
   margin-top: 10px;
   margin-bottom: 10px;
-  height: 100%;
+}
+
+.card-img-top {
+  height: 175px;
 }
 
 input#honeypotInput {
@@ -10827,6 +10855,15 @@ form .form-group {
 .blog-feed {
   background-color: #F4F4F4;
   margin-top: 25px;
+}
+
+.jumbotron-blog {
+  margin-bottom: 0 !important;
+}
+
+.blog-feed {
+  margin-top: 0;
+  padding-top: 25px;
 }
 
 /*# sourceMappingURL=style.css.map */

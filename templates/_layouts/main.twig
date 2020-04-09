@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Quicksand&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2f8deb4341.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -12,7 +13,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex">
   {# Brand Logo #}
   <div>
-  <a class="navbar-brand" href="/"><img src="images/uploads/logo/Memorabilia-Man.png"></a>
+  <a class="navbar-brand" href="/"><img src="/images/uploads/logo/Memorabilia-Man.png"></a>
   </div>
 
   {# Burger Menu Button#}
@@ -42,7 +43,6 @@
 {# Footer #}
 <footer class="footer">
 <div class="d-flex justify-content-around bg-light flex-column flex-sm-row ">
-
     {# Footer Column One #}
     {% if craft.navigation.nodes('footerOne').count() > 0 %}
       <div class="container text-center flex-column">
@@ -68,18 +68,13 @@
     {% endif %}
 
     {# Footer Column Three #}
-    {% if craft.navigation.nodes('footerThree').count() > 0 %}
       <div class="container text-center flex-column">
-          {{ craft.navigation.render('footerthree', {
-          ulClass: 'navbar-nav',
-          liClass: 'nav-item',
-          aClass: 'nav-link text-center',
-          activeClass: 'active',
-      }) }}
+        <p>Get in contact</p>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/russmartinmemorabiliaman/"><i class="fab fa-facebook-f"></i></a>
+        <a href="/contact"><i class="far fa-envelope"></i></a>
       </div>
-    {% endif %}
-  </div>
-  
+</div>
   <div class="copyright text-center">
     © Memorabilia Man 2020 | Site By Nacho Web Design
   </div>

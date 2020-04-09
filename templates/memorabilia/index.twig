@@ -2,4 +2,30 @@
 
 {% block main %}
 
+<div class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center jumbotron-blog" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url({{  entry.bannerImage.one().url() }});">
+  <div class="container text-center">
+    <h1 class="display-4">{{ entry.bannerHeading }}</h1>
+    <p class="lead">{{ entry.bannerSubheading }}</p>
+  </div>
+</div>
+
+{# Blog Feed #}
+<div class="blog-feed blog-page-feed d-flex flex-column">
+  <div class="cards-container container d-flex flex-column flex-md-row justify-content-start flex-wrap">
+  {% for entry in craft.entries.section('blog').all() %}
+  <a href="{{ entry.url() }}">
+    <div class="col-md-4">
+      {{craft.molecule.get("blogPageCard", {
+        img: entry.featuredImage.one().url(),
+        title: entry.title,
+        excerpt: entry.excerpt,
+        URL: entry.url()
+        })
+      }}
+    </div>
+  </a>  
+  {% endfor %}
+  </div>
+</div>
+{{ craft.molecule.get('cta') }}
 {% endblock %}
