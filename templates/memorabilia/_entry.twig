@@ -1,5 +1,57 @@
 {% extends "_layouts/main" %}
 
 {% block main %}
+  <div class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url({{  entry.featuredImage.one().url() }});">
+  <div class="container text-center">
+    <h1 class="display-4">{{ entry.title }}</h1>
+    <p class="lead">{{ entry.bannerSubheading }}</p>
+  </div>
+</div>
 
+<div class="container container-padding">
+{% for block in entry.contentBlock %}
+  {% switch block.type %}
+  
+    {% case "text" %}
+    <p>{{block.bodyText}}</p>
+  
+    {% case "image" %}
+    {% set image = block.addImage %}
+    <div class="text-center">
+      {% for img in image%}
+      <img src="{{ img.url() }}" class="img-fluid col-md-4" alt="...">
+      {% endfor %}
+    </div>
+
+    {% case "video" %}
+    {# Video #}
+    <div class="vimeo-video container embed-responsive embed-responsive-16by9">
+      <div class="embed-responsive-item">
+        <iframe src="{{ block.video }}" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
+    </div>
+  {% endswitch %}
+{% endfor %}
+</div>
+
+{# Blog Feed #}
+<div class="blog-feed d-flex flex-column">
+  <h3 class="text-center">Memorabilia Stories</h3>
+  <p class="text-center">Find stories and accounts of how Russel Martin collected some of his most prized memorabilia pieces.</p>
+  <div class="cards-container container d-flex flex-column flex-md-row justify-content-around">
+  {% for entry in craft.entries.section('blog').limit(3).all() %}
+    <div class="col-md-4">
+      {{craft.molecule.get("card", {
+        img: entry.featuredImage.one().url(),
+        title: entry.title,
+        excerpt: entry.excerpt,
+        URL: entry.url()
+        })
+      }}
+    </div>
+  {% endfor %}
+  </div>
+</div>
+
+{{ craft.molecule.get('cta') }}
 {% endblock %}

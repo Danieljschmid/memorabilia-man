@@ -10707,6 +10707,12 @@ form .alert-danger {
   color: #C0B283;
 }
 
+.carousel-caption h5 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5em;
+  color: #C0B283;
+}
+
 .btn-outline-dark {
   border-color: #373737 !important;
 }
@@ -10719,6 +10725,11 @@ form .alert-danger {
 .page-content {
   position: relative;
   min-height: 100vh;
+}
+
+.container-padding {
+  margin-top: 25px;
+  margin-bottom: 30px;
 }
 
 .jumbotron {
@@ -10823,10 +10834,6 @@ footer .d-flex i {
   margin-bottom: 10px;
 }
 
-.card-img-top {
-  height: 175px;
-}
-
 input#honeypotInput {
   display: none;
 }
@@ -10849,6 +10856,24 @@ form .form-control:focus::placeholder {
   color: white;
 }
 form .form-group {
+  margin-bottom: 30px;
+}
+
+.carousel-inner img {
+  height: 300px !important;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  background-color: white;
+  left: 25%;
+  right: 25%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.carousel {
+  margin-top: 25px;
   margin-bottom: 30px;
 }
 

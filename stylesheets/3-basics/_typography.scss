@@ -85,3 +85,12 @@ form {
 .btn-outline-dark:hover {
     color: $colorPrimary;
 }
+
+// Featured Blog 
+.carousel-caption {
+    h5 {
+      font-family: $fontSerif;
+      font-size: 1.5em;
+      color: $colorPrimary;
+  }
+}

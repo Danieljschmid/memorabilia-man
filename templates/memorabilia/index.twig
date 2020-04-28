@@ -9,6 +9,34 @@
   </div>
 </div>
 
+<div class="container text-center container-padding">
+{% for block in entry.contentBlock %}
+  {% switch block.type %}
+  
+    {% case "text" %}
+    <p>{{block.bodyText}}</p>
+  
+    {% case "image" %}
+    {% set image = block.addImage.one() %}
+    <img src="{{ image.url() }}" class="img-fluid col-md-4" alt="...">
+
+    {% case "video" %}
+    {# Video #}
+    <div class="vimeo-video container embed-responsive embed-responsive-16by9">
+      <div class="embed-responsive-item">
+        <iframe src="{{ block.video }}" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
+    </div>
+  {% endswitch %}
+{% endfor %}
+</div>
+
+{# Featured Blog #}
+<div class="container">
+  {{craft.molecule.get("featuredBlog", {
+    }) 
+  }}
+</div>
 {# Blog Feed #}
 <div class="blog-feed blog-page-feed d-flex flex-column">
   <div class="cards-container container d-flex flex-column flex-md-row justify-content-start flex-wrap">

@@ -8,7 +8,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container container-padding">
 <h2 class="text-center">Russel Martin: Memorabilia Man</h2>
 {% for block in entry.contentBlock %}
   {% switch block.type %}
@@ -18,7 +18,7 @@
   
     {% case "image" %}
     {% set image = block.addImage.one() %}
-    <img src="{{ image.url() }}" class="img-fluid" alt="...">
+    <img src="{{ image.url() }}" class="img-fluid col-md-4" alt="...">
 
     {% case "video" %}
     {# Video #}
@@ -38,7 +38,7 @@
 {# Blog Feed #}
 <div class="blog-feed d-flex flex-column">
   <h3 class="text-center">Memorabilia Stories</h3>
-  <p class="text-center">The collection is made up from over 1400 pieces of memorabilia, each with it's its own story.</p>
+  <p class="text-center">Find stories and accounts of how Russel Martin collected some of his most prized memorabilia pieces.</p>
   <div class="cards-container container d-flex flex-column flex-md-row justify-content-around">
   {% for entry in craft.entries.section('blog').limit(3).all() %}
     <div class="col-md-4">
