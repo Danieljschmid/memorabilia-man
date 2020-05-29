@@ -31,7 +31,7 @@
             {{ csrfInput() }}
             <input type="hidden" name="action" value="contact-form/send">
             {# Page Redirect After Form Submision #}
-            {{ redirectInput('contact/thanks') }}
+          
 
             {# Name Input #}
             <div class="form-group">
@@ -53,6 +53,12 @@
 
             {# Submit Button #}
             <input class="btn btn-outline-dark" type="submit" value="Send Message">
+
+            {% if craft.app.session.hasFlash('notice') %}
+    <p class="message notice">{{ craft.app.session.getFlash('notice') }}</p>
+{% elseif craft.app.session.hasFlash('error') %}
+    <p class="message error">{{ craft.app.session.getFlash('error') }}</p>
+{% endif %}
 
             {# Hidden Honeypot(anti-spam) Input #}
             <input id="honeypotInput" name="honeypotInput" type="text">
